@@ -1,0 +1,15 @@
+{
+  "name": "3-reactblog",
+  "version": "1.0.0",
+  "description": "react blog practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "neokage",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1"
+  }
+}
