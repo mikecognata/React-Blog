@@ -1,6 +1,9 @@
 /node_modules
 /build
 
+dev.js
+
+
 .DS_Store
 
 npm-debu.log*
@@ -8,3 +11,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
+
