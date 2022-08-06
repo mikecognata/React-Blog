@@ -4,24 +4,28 @@
   "description": "react blog practice",
   "main": "index.js",
   "engine": {
-    "node":"16.15.0",
-    "npm":"8.8.0"
+    "node": "16.15.0",
+    "npm": "8.8.0"
   },
   "scripts": {
     "start": "node server/index.js",
-    "backend": "nodemon server/index.js"
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "author": "neokage",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
+    "concurrently": "^7.3.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.1"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^2.0.6",
     "nodemon": "^2.0.19"
   }
 }
