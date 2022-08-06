@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "react blog practice",
   "main": "index.js",
+  "engine": {
+    "node":"16.15.0",
+    "npm":"8.8.0"
+  }
   "scripts": {
-    "start": "node index.js",
-    "backend": "nodemon index.js"
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js"
   },
   "author": "neokage",
   "license": "ISC",

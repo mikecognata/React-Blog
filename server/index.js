@@ -5,7 +5,7 @@ const bodyParser   = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 
-const config = require("./config/keys")
+const config = require("./config/key")
 
 const { User } = require("./models/user");
 const { auth } = require("./middleware/auth");
@@ -76,14 +76,24 @@ app.post("/api/user/login", (req, res) => {
             .status(200)
             .json({
                 loginSuccess: true
-            })
+            });
+        });
+    });
+});
+
+
+app.get("/api/user/logout", auth, (req, res) =>{
+    User.findOneAndUpdate({_id: req.user._id}, { token: ""}, (err,doc) =>{
+        if(err) return res.json({ success: false, err })
+        return res.status(200).send({
+            success: true
+        })
     })
-    })
-
-
-
 })
 
 
+const port = process.env.PORT || 9000
 
-app.listen(9000);
+app.listen(port, () => {
+    console.log(`Server Running at ${port}`)
+});
